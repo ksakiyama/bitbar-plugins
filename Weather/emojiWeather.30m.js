@@ -36,7 +36,7 @@ request(url, function (err, response, body) {   // Collect JSON object
 
         let weather = JSON.parse(body);
         let id = weather.weather[0].id; // Seperate the weather ID
-        id = Math.ceil(id / 100);       // Get only the hundreds place (1xx, 2xx)
+        id = Math.floor(id / 100);       // Get only the hundreds place (1xx, 2xx)
 
         console.log(emojis[id]);        // Print the emoji 
     }
